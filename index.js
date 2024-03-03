@@ -22,7 +22,9 @@ const run = async () => {
         return;
     }
 
-    shape.setColor(userInput.shapeColor);
+    shape.setShapeColor(userInput.shapeColor);
+    shape.setTextColor(userInput.textColor);
+    shape.setText(userInput.text);
 
     const svgCode = shape.render();
     writeToFile('logo.svg', svgCode);

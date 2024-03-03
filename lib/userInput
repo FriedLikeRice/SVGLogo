@@ -1,0 +1,38 @@
+const inquirer = require('inquirer');
+
+const promptUser = async () => {
+  const userInput = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'text',
+      message: 'Enter up to three characters:',
+      validate: input => {
+        // Validate that the input is up to three characters
+        if (input.length > 3) {
+          return 'Please enter up to three characters.';
+        }
+        return true;
+      },
+    },
+    {
+      type: 'input',
+      name: 'textColor',
+      message: 'Enter text color (keyword or hexadecimal):',
+    },
+    {
+      type: 'list',
+      name: 'shape',
+      message: 'Choose a shape:',
+      choices: ['triangle', 'circle', 'square'],
+    },
+    {
+      type: 'input',
+      name: 'shapeColor',
+      message: 'Enter shape color (keyword or hexadecimal):',
+    },
+  ]);
+
+  return userInput;
+};
+
+module.exports = promptUser;

@@ -231,7 +231,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "Error"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
